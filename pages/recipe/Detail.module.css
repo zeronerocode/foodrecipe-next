@@ -1,0 +1,29 @@
+.videoButton {
+    background-color: rgba(239, 200, 26, 1);
+    color: white;
+    border: 5px solid #EFC81A;
+    border-radius: 15px;
+    height: 90px;
+    width: 400px;
+    margin-top: 42px;
+}
+
+.textArea {
+    margin-top: 100px;
+    width: 1100px;
+    height: 390px;
+    padding: 40px;
+    background: #F6F5F4;
+    border-radius: 15px;
+    border: none;
+}
+
+.buttonSend {
+    width: 400px;
+    height: 64px;
+    background: #EFC81A;
+    border-radius: 6px;
+    border: none;
+    margin-top: 40px;
+    align-items: center;
+}

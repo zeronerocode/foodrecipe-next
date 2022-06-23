@@ -1,0 +1,36 @@
+.leftCol img {
+    object-fit: cover;
+    width: 50vw;
+    height: 100vh;
+}
+
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.formInput {
+    height: 34px;
+    width: 426px;
+    height: 54px;
+    padding-left: 10px;
+    border: 1px solid #8692A6;
+    border-radius: 6px;
+}
+
+.formInput:focus {
+    border: 1px solid #EFC81A;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    background: #FFFFFF;
+}
+
+.btnLogin {
+    background-color: #EFC81A;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    width: 426px;
+    height: 54px;
+}

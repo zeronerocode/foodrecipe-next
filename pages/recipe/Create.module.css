@@ -1,0 +1,62 @@
+.imgInput::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.imgInput {
+    content: 'Add Photo';
+    display: inline-block;
+    background: #F6F5F4;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 480px;
+    width: 1100px;
+    padding: 35px;
+}
+
+.formInput {
+    margin-top: 40px;
+    height: 70px;
+    width: 1100px;
+    background: #F6F5F4;
+    border-radius: 8px;
+    padding: 35px;
+    border: none;
+}
+
+.areaInput {
+    width: 1100px;
+    height: 380px;
+    margin-top: 40px;
+    border: none;
+    border-radius: 15px;
+    padding: 35px;
+    background: #F6F5F4;
+}
+
+.videoInput::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.videoInput {
+    content: 'Add Photo';
+    display: inline-block;
+    background: #F6F5F4;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 70px;
+    width: 1100px;
+    margin-top: 40px;
+}
+
+.btnPost {
+    width: 426px;
+    height: 64px;
+    background: #EFC81A;
+    border-radius: 6px;
+    border: none;
+    margin-top: 40px;
+}
