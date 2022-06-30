@@ -5,14 +5,15 @@ import { useRouter } from 'next/router'
 import Image from "next/image";
 import Button from "../../components/base/Button";
 import Textarea from "../../components/base/Textarea";
+import axios from 'axios'
 
-const Product = () => {
+const RecipeDetail = ({recipeDetail}) => {
     const router = useRouter()
     return (
         <>
             <Layout title='product - tokoku'>
                 <div className='container text-center'>
-                    <h1 className="text-center">Lorem Sandwich</h1>
+                    <h1 className="text-center">{ recipeDetail.title }</h1>
                     <Image className="text-center" src={'/assets/img/sandwich.png'} width={1000} height={700} alt='image' />
                 </div>
                 <div className="container mt-5">
@@ -40,5 +41,24 @@ const Product = () => {
         </>
     );
 };
-
-export default Product;
+export const getServerSideProps=async(context)=>{
+    const cookie = context.req.headers.cookie 
+    const {id} = context.params
+    if (!cookie ){
+      // Router.replace('/login')
+      context.res.writeHead(302, {
+        Location: `http://localhost:3000/auth/login`
+      })
+      return {}
+    }
+    const { data: RespData } = await axios.get(`http://localhost:5000/v1/recipe/${id}`, {withCredentials: true, headers:{
+      Cookie:cookie
+    }});
+    console.log(RespData);
+    return {
+      props: {
+        recipeDetail: RespData.data,
+      }, // will be passed to the page component as props
+    };
+  }
+export default RecipeDetail;

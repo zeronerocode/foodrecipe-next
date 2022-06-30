@@ -5,16 +5,10 @@ import style from './Footer.module.css'
 const Footer = () => {
   return (
     <footer className={style.footer}>
-    <a
-      href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Powered by{' '}
-      <span className={style.logo}>
-        <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-      </span>
-    </a>
+      <div className='container text-center'>
+          <h1 className='mt-5'>Eat, Cook, Repeat</h1>
+          <p className='mt-2'>Share your best recipe by uploading here !</p>
+      </div>
   </footer>
   )
 }

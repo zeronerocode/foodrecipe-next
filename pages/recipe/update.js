@@ -8,7 +8,7 @@ import Button from "../../components/base/Button";
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
-const Create = () => {
+const Update = () => {
   const router = useRouter()
   const [files, setFiles] = useState([])
   const [video, setVideo] = useState([])
@@ -89,4 +89,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default Update;

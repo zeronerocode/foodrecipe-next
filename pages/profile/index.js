@@ -1,9 +1,6 @@
 import Head from "next/head";
 import Layout from "../../components/layout/Layout";
 import style from "./Profile.module.css"
-import Input from "../../components/base/Input"
-import Textarea from "../../components/base/Textarea";
-import Button from "../../components/base/Button";
 import { useRouter } from 'next/router'
 import Image from "next/image";
 import Link from "next/link";
@@ -30,7 +27,18 @@ const Create = () => {
                             <Link href="/profile">Profile</Link>
                         </li>
                     </ul>
-                    <hr/>
+                    <hr />
+                    <div className="row">
+                        <div className="col-md-4">
+                            <Image src={'/assets/img/food-1.png'} width={500} height={500} alt='image' />
+                        </div>
+                        <div className="col-md-4">
+                            <Image src={'/assets/img/food-2.png'} width={500} height={500} alt='image' />
+                        </div>
+                        <div className="col-md-4">
+                            <Image src={'/assets/img/food-3.png'} width={500} height={500} alt='image' />
+                        </div>
+                    </div>
                 </div>
             </Layout>
         </>

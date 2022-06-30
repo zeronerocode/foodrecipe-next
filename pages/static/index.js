@@ -1,13 +1,13 @@
 import Head from "next/head";
-import Layout from "../components/layout/Layout";
+import Layout from "../../components/layout/Layout";
 import { useRouter } from 'next/router'
 import Image from "next/image";
 import axios from 'axios'
 
-const Recipe = ({recipes}) => {
+const StaticRecipe = ({recipes}) => {
   const router = useRouter()
   const handleClick = (id) => {
-    router.push(`/recipe/${id}`)
+    router.push(`/static/${id}`)
   } 
   // useEffect(() => {
   //   const fetch = async () => {
@@ -22,7 +22,7 @@ const Recipe = ({recipes}) => {
     <>
       <Layout title='Home - FoodRecipe'>
         <div className={'container'}>
-          <h1>Popular Recipe</h1>
+          <h1>Popular StaticRecipe</h1>
           <div className="row">
             {!recipes ? <h3>loading</h3> : recipes.map((r, id) => (
               <div className="col-md-4" key={id}  onClick={() => handleClick(r.id)}>
@@ -36,26 +36,13 @@ const Recipe = ({recipes}) => {
     </>
   );
 };
-
-export async function getServerSideProps(context) {
-
-  const cookie = context.req.headers.cookie 
-  if (!cookie ){
-    // Router.replace('/login')
-    context.res.writeHead(302, {
-      Location: `http://localhost:3000/auth/login`
-    })
-    return {}
-  }
-  const { data: RespData } = await axios.get("http://localhost:5000/v1/recipe", {withCredentials: true, headers:{
-    Cookie:cookie
-  }});
-
-  return {
-    props: {
-      recipes: RespData.data,
-    },
-  };
+export const getStaticProps =async()=> {
+    const { data: RespData } = await axios.get("http://localhost:5000/v1/recipe");
+    return {
+        props:{
+            recipes: RespData.data
+        }
+    }
 }
 
-export default Recipe;
+export default StaticRecipe;
