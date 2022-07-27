@@ -36,13 +36,26 @@ const StaticRecipe = ({recipes}) => {
     </>
   );
 };
-export const getStaticProps =async()=> {
-    const { data: RespData } = await axios.get("http://localhost:5000/v1/recipe");
-    return {
-        props:{
-            recipes: RespData.data
-        }
-    }
+
+export async function getServerSideProps(context) {
+
+  const cookie = context.req.headers.cookie 
+  if (!cookie ){
+    // Router.replace('/login')
+    context.res.writeHead(302, {
+      Location: `http://localhost:3000/auth/login`
+    })
+    return {}
+  }
+  const { data: RespData } = await axios.get("http://localhost:5000/v1/recipe", {withCredentials: true, headers:{
+    Cookie:cookie
+  }});
+
+  return {
+    props: {
+      recipes: RespData.data,
+    },
+  };
 }
 
 export default StaticRecipe;

@@ -1,0 +1,36 @@
+.banner {
+    height: 100%;
+    background: linear-gradient(90deg, #FFF 75%, #EFC81A 25%);
+    padding: 20px;
+}
+
+.bannerText h1 {
+    color: #2E266F;
+    font-weight: 500;
+    font-size: 52px;
+    margin: 10px;
+}
+
+.input {
+    background: #EFEFEF;
+    border-radius: 15px;
+    width: 470px;
+    height: 70px;
+    border: none;
+    padding: 26px;
+    margin-left: 20px;
+}
+
+.input:focus{
+    border: none;
+    outline: none;
+}
+
+.popular {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    margin-left: 10px;
+    border-left: #EFC81A solid 15px;
+    padding: 10px;
+}

@@ -7,6 +7,7 @@ import Button from '../../../components/base/Button'
 import Input from '../../../components/base/Input'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const router = useRouter()
@@ -28,7 +29,12 @@ const Login = () => {
                 router.push(`/`)
             })
             .catch(() => {
-                alert('login gagal')
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Do you want to continue',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
             })
     }
     return (

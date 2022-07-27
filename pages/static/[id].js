@@ -16,20 +16,13 @@ const StaticRecipeDetail = ({ recipeDetail }) => {
         <>
             <Layout title='Detail Recipe - Food Recipe'>
                 <div className='container text-center'>
-                    <h1 className="text-center">{recipeDetail.title}</h1>
-                    <Image className="text-center" src={'/assets/img/sandwich.png'} width={1000} height={700} alt='image' />
+                    <h1 className="text-center">{recipeDetail[0].title}</h1>
+                    <Image className="text-center" src={recipeDetail[0].recipe_photo} width={800} height={600} alt='image' />
                 </div>
                 <div className="container mt-5">
                     <h3>Ingredients</h3>
                     <p>
-                        - 2 eggs <br />
-                        - 2 tbsp mayonnaise <br />
-                        - 3 slices bread <br />
-                        - a little butter <br />
-                        - ⅓ carton of cress <br />
-                        - 2-3 slices of tomato or a lettuce leaf
-                        and a slice of ham or cheese <br />
-                        - crisps , to serve <br />
+                        {recipeDetail[0].ingredients}
                     </p>
                     <h3>Video Step</h3>
                     <Button className={style.videoButton}>Button</Button> <br />

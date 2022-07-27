@@ -1,0 +1,17 @@
+.banner2 {
+    margin: 30px;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    background: #EFC81A;
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+}
+
+.banner2Text {
+    padding: 50px;
+    margin-top: 50px;
+}

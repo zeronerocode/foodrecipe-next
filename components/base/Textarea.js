@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Textarea = ({className,onChange,name, placeholder, value, rows}) => {
+const Textarea = ({className,onChange,name, placeholder, value, rows, defaultValue}) => {
   return (
     <textarea 
     className={className} 
@@ -8,7 +8,9 @@ const Textarea = ({className,onChange,name, placeholder, value, rows}) => {
     name={name}
     rows={rows} 
     value={value} 
-    placeholder={placeholder}>
+    placeholder={placeholder}
+    defaultValue={defaultValue}
+    >
     </textarea>
   )
 }

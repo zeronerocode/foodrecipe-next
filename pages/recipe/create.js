@@ -45,7 +45,7 @@ const Create = () => {
     formData.append('ingredients', recipe.ingredients)
 
     try {
-      const result = await axios.post('http://localhost:5000/v1/recipe/',formData)
+      const result = await axios.post(`${process.env.NEXT_APP_API_URL}/recipe/`,formData, {withCredentials: true})
       router.push(`/`)
     } catch (error) {
       

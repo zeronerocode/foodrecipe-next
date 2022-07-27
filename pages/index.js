@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
+import Banner from "../components/module/Banner";
 import { useRouter } from 'next/router'
 import Image from "next/image";
 import axios from 'axios'
+import Banner2 from "../components/module/Banner2";
+
 
 const Recipe = ({recipes}) => {
   const router = useRouter()
@@ -21,6 +24,10 @@ const Recipe = ({recipes}) => {
   return (
     <>
       <Layout title='Home - FoodRecipe'>
+        <div>
+          <Banner/>
+          <Banner2/>
+        </div>
         <div className={'container'}>
           <h1>Popular Recipe</h1>
           <div className="row">
@@ -47,7 +54,7 @@ export async function getServerSideProps(context) {
     })
     return {}
   }
-  const { data: RespData } = await axios.get("http://localhost:5000/v1/recipe", {withCredentials: true, headers:{
+  const { data: RespData } = await axios.get(`${process.env.NEXT_APP_API_URL}/recipe`, {withCredentials: true, headers:{
     Cookie:cookie
   }});
 
