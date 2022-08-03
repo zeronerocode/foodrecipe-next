@@ -24,8 +24,7 @@ const Login = () => {
   const hanleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/v1/users/login", form, {
-        withCredentials: true,
+      .post(`${process.env.NEXT_APP_API_URL}/users/login`, form, {
       })
       .then(() => {
         Swal.fire({

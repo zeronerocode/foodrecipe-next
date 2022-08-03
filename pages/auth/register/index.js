@@ -24,7 +24,7 @@ const Register = () => {
   }
   const hanleRegister = (e)=>{
       e.preventDefault()
-      axios.post('http://localhost:5000/v1/users/register',form, {withCredentials: true} )
+      axios.post(`${process.env.NEXT_APP_API_URL}/users/register`,form )
       .then(()=>{
           alert('register succes')
           router.push(`/auth/login`)

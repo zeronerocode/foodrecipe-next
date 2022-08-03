@@ -50,7 +50,7 @@ const Create = () => {
       Swal.fire({
         position: "top-end",
         icon: "success",
-        title: "Login Success",
+        title: "Add Recipe Success",
         showConfirmButton: false,
         timer: 1500,
       });
