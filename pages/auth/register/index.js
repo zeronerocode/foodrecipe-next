@@ -7,6 +7,7 @@ import Input from '../../../components/base/Input'
 import axios from "axios";
 import {useRouter} from 'next/router'
 import Link from 'next/link'
+import Swal from 'sweetalert2'
 
 const Register = () => {
   const router = useRouter()
@@ -26,11 +27,23 @@ const Register = () => {
       e.preventDefault()
       axios.post(`${process.env.NEXT_APP_API_URL}/users/register`,form )
       .then(()=>{
-          alert('register succes')
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Login Success",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           router.push(`/auth/login`)
       })
       .catch(()=>{
-          alert('register gagal')
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Login Error",
+            showConfirmButton: false,
+            timer: 1500,
+          });
       })
   }
     return (
