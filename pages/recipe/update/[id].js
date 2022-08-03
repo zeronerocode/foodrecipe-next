@@ -12,14 +12,16 @@ import axios from 'axios'
 const Update = (recipeDetail) => {
   const router = useRouter()
   const [files, setFiles] = useState([])
-  const [video, setVideo] = useState([])
-  const [image, setImage] = useState([])
+  const [video, setVideo] = useState('')
+  const [image, setImage] = useState('')
   const [recipe, setRecipe] = useState({
     title: '',
     ingredients: ''
   })
   const {id} = recipeDetail.recipeDetail[0]
   const resep = recipeDetail.recipeDetail[0]
+  // image = recipeDetail.recipeDetail[0].recipe_photo
+  // video = recipeDetail.recipeDetail[0].recipe_video
   console.log("resep update=>",resep)
   console.log("image => ", image);
   const hanldeImageUpload = (e) => {
@@ -67,7 +69,7 @@ const Update = (recipeDetail) => {
               name={'recipe_image'}
               className={style.imgInput}
               onChange={hanldeImageUpload}
-              defaultValue={image}
+              defaultValue={image || ''}
               placeholder={'add photo'}>
             </Input>
             <Input
@@ -89,7 +91,7 @@ const Update = (recipeDetail) => {
               name={'recipe_video'}
               onChange={handleVideoUpload}
               placeholder={'Video'} 
-              defaultValue={resep.recipe_video}
+              defaultValue={resep.recipe_video || ''}
               />
               
             <Button type='submit' className={style.btnPost}>Post</Button>

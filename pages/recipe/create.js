@@ -7,6 +7,7 @@ import Textarea from "../../components/base/Textarea";
 import Button from "../../components/base/Button";
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import Swal from 'sweetalert2';
 
 const Create = () => {
   const router = useRouter()
@@ -46,6 +47,13 @@ const Create = () => {
 
     try {
       const result = await axios.post(`${process.env.NEXT_APP_API_URL}/recipe/`,formData, {withCredentials: true})
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Login Success",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       router.push(`/`)
     } catch (error) {
       

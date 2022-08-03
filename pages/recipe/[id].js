@@ -27,11 +27,11 @@ const RecipeDetail = ({recipeDetail}) => {
             <Layout title='Detail Recipe - Food Recipe'>
                 <div className='container text-center'>
                     <h1 className="text-center">{ recipeDetail[0].title }</h1>
-                    <Image className="text-center" src={recipeDetail[0].recipe_photo} width={1000} height={700} alt='image' />
+                    <Image className="text-center" src={recipeDetail[0].recipe_photo} width={800} height={500} alt='image' />
+                    <div>
                     <Button className={'btn btn-danger'} onClick={()=>handleDelete(recipeDetail[0].id)}>Delete</Button>
-                    <span>
                     <Button className={'btn btn-success'} onClick={() => handleClick(recipeDetail[0].id)} >Edit</Button>
-                    </span>
+                    </div>
                 </div>
                 <div className="container mt-5">
                     <h3>Ingredients</h3>
