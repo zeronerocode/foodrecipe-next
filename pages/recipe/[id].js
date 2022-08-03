@@ -61,8 +61,7 @@ export const getServerSideProps=async(context)=>{
       })
       return {}
     }
-    const { data: RespData } = await axios.get(`${process.env.NEXT_APP_API_URL}/recipe/${id}`, {withCredentials: true, headers:{
-      Cookie:cookie
+    const { data: RespData } = await axios.get(`${process.env.NEXT_APP_API_URL}/recipe/${id}`, {headers:{
     }});
     console.log(RespData);
     return {

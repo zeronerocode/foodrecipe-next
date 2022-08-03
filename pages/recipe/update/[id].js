@@ -102,18 +102,17 @@ const Update = (recipeDetail) => {
   );
 };
 export const getServerSideProps = async (context) => {
-  const cookie = context.req.headers.cookie
-  const { id } = context.params
-  if (!cookie) {
-    // Router.replace('/login')
-    context.res.writeHead(302, {
-      Location: `http://localhost:3000/auth/login`
-    })
-    return {}
-  }
+  // const cookie = context.req.headers.cookie
+  // const { id } = context.params
+  // if (!cookie) {
+  //   // Router.replace('/login')
+  //   context.res.writeHead(302, {
+  //     Location: `http://localhost:3000/auth/login`
+  //   })
+  //   return {}
+  // }
   const { data: RespData } = await axios.get(`${process.env.NEXT_APP_API_URL}/recipe/${id}`, {
-    withCredentials: true, headers: {
-      Cookie: cookie
+    headers: {
     }
   });
   // console.log(RespData);
