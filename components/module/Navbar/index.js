@@ -2,9 +2,11 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import style from "./Navbar.module.css";
 import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false);
+  const router = useRouter()
   useEffect(() => {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("token");
@@ -15,12 +17,13 @@ const Navbar = () => {
   }, []);
   const handleLogout = async () => {
     localStorage.clear()
-    setIsLogin(false)
-    swal({
+    setIsLogin(false);
+    new Swal({
       title: "Good job!",
       text: `Anda berhasil logout`,
       icon: "success"
     })
+    router.push(`/auth/login`);
   };
   return (
     <div className={style.navbar}>

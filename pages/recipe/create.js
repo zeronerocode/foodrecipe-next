@@ -46,7 +46,7 @@ const Create = () => {
     formData.append('ingredients', recipe.ingredients)
 
     try {
-      const result = await axios.post(`${process.env.NEXT_APP_API_URL}/recipe/`,formData, {withCredentials: true})
+      const result = await axios.post(`${process.env.NEXT_APP_API_URL}/recipe/`,formData)
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -56,7 +56,13 @@ const Create = () => {
       });
       router.push(`/`)
     } catch (error) {
-      
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Add Recipe Failed",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   }
 

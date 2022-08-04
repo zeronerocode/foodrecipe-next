@@ -103,7 +103,7 @@ const Update = (recipeDetail) => {
 };
 export const getServerSideProps = async (context) => {
   // const cookie = context.req.headers.cookie
-  // const { id } = context.params
+  const { id } = context.params
   // if (!cookie) {
   //   // Router.replace('/login')
   //   context.res.writeHead(302, {

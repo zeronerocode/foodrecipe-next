@@ -23,7 +23,7 @@ const Login = () => {
   };
   const hanleLogin = (e) => {
     e.preventDefault();
-    axios
+    const user = axios
       .post(`${process.env.NEXT_APP_API_URL}/users/login`, form, {
       })
       .then(() => {
@@ -34,6 +34,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        localStorage.setItem('token', user.token)
         router.push(`/`);
       })
       .catch(() => {
