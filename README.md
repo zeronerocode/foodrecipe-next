@@ -90,3 +90,13 @@ REACT_APP_API_URL = [API_URL]
     <td>Detail Recipe</td>
   </tr>
 </table>
+
+## Related Project
+
+:rocket: [`Backend MamaRecipe`](https://github.com/zeronerocode/FoodRecipe)
+
+:rocket: [`Frontend MamaRecipe`](https://github.com/zeronerocode/foodrecipe-next)
+
+:rocket: [`Web Service`](https://food-recipe-server.herokuapp.com/)
+
+:rocket: [`Demo MamaRecipe`](https://foodrecipe-eosin.vercel.app/)
